@@ -25,6 +25,8 @@ Assumption: you have already git cloned the project and moved inside the current
 I am using the pytest package to streamline testing.
 I'd recommend creating a virtual environment first!
 
+I have written about 22 tests, which tests edge cases, and bad input types which are auto handled or auto rejected!
+
 1. Install pytest by typing the following command in your terminal\
     `pip install -r requirements.txt`\
     or\
