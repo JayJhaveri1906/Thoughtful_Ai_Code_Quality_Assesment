@@ -47,7 +47,7 @@ class PackageSorter():
             height = float(height)
             length = float(length)
             mass = float(mass)
-        except:
+        except ValueError:
             return "REJECTED"   # invalid input
 
 
