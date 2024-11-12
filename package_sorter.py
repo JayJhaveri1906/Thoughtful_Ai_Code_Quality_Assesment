@@ -8,6 +8,27 @@ class PackageSorter():
         self.REF_HEAVY_WEIGHT = 20      # kg
 
 
+    def isBulky(self, width, height, length):
+        # Checking bulyness
+        volume = width * height * length
+
+        if (volume >= self.REF_BULKY_VOL) or \
+        (width >= self.REF_BULKY_INDIV_DIM) or \
+        (height >= self.REF_BULKY_INDIV_DIM) or \
+        (length >= self.REF_BULKY_INDIV_DIM):
+            return True
+        
+        return False
+    
+
+    def isHeavy(self, mass):
+        # check heavyness
+        if mass >= self.REF_HEAVY_WEIGHT:
+            return True
+
+        return False
+
+
     def sort(self, width, height, length, mass):
         """
         Returns one of {"STANDARD", "SPECIAL", "REJECTED"}
@@ -19,22 +40,8 @@ class PackageSorter():
         :param float length: in cm
         :param float mass: in kg
         """
-        package_bulky = False
-        package_heavy = False
-
-        # Checking bulyness
-        volume = width * height * length
-
-        if (volume >= self.REF_BULKY_VOL) or \
-        (width >= self.REF_BULKY_INDIV_DIM) or \
-        (height >= self.REF_BULKY_INDIV_DIM) or \
-        (length >= self.REF_BULKY_INDIV_DIM):
-            package_bulky = True
-
-
-        # check heavyness
-        if mass >= self.REF_HEAVY_WEIGHT:
-            package_heavy = True
+        package_bulky = self.isBulky(width, height, length)
+        package_heavy = self.isHeavy(mass)
         
         if not package_bulky and not package_heavy:
             return "STANDARD"

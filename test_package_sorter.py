@@ -51,5 +51,5 @@ def test_sorter_output_rejected(my_package_sorter, width, height, length, mass):
 
 
 # Testing, when input type is not what we expected
-def test_sorter_input_type():
+def test_sorter_input_type(my_package_sorter):
     assert my_package_sorter.sort("1",2,3,4) == "REJECTED"
