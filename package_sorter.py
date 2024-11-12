@@ -63,3 +63,8 @@ class PackageSorter():
             return "SPECIAL"
 
 
+if __name__ == "__main__":
+    # Example:
+    
+    my_package_sorter = PackageSorter()
+    print(my_package_sorter.sort(100,22,34,4))
