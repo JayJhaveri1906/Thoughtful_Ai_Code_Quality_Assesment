@@ -30,7 +30,7 @@ def test_sorter_output_standard(my_package_sorter, width, height, length, mass):
     (200, "50", 50, 10),        # Bulky due to width dimension only
     (150.0, "50", 50, 10),      # Bulky due to exactly 150 cm dimension
     (50, 50.0, 160, 10),      # Bulky due to length dimension only
-    (500, "10", 200, 15),       # Bulky due to volume with non-cubic dimensions
+    (500, "10.0", 200, 15),       # Bulky due to volume with non-cubic dimensions
     (200, 200, 200, 10.0),    # Large dimensions but not heavy
     (50, 50, "50", 25.0),       # Heavy due to mass only
     (10, 10, 10.0, 30),       # Heavy package with small dimensions
