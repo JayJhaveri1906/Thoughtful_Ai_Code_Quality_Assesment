@@ -1,2 +1,4 @@
 .conda
 temp*
+__pycache__
+.pytest_cache
