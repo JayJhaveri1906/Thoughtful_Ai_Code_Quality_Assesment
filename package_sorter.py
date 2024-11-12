@@ -40,6 +40,18 @@ class PackageSorter():
         :param float length: in cm
         :param float mass: in kg
         """
+
+        # Handling invalid inputs
+        try:
+            width = float(width)
+            height = float(height)
+            length = float(length)
+            mass = float(mass)
+        except:
+            return "REJECTED"   # invalid input
+
+
+
         package_bulky = self.isBulky(width, height, length)
         package_heavy = self.isHeavy(mass)
         
